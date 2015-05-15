@@ -14,7 +14,6 @@
   "devDependencies": {
     "babelify": "^6.1.1",
     "browserify": "^6.2.0",
-    "envify": "^3.0.0",
     "gulp": "^3.8.11",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.4",
@@ -26,16 +25,14 @@
     "watchify": "^2.1.1"
   },
   "scripts": {
-    "start": "watchify -o js/bundle.js -v -d js/app.js",
-    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
+    "start": "gulp",
     "test": "jest"
   },
   "author": "Bill Fisher",
   "browserify": {
     "transform": [
       "babelify",
-      "reactify",
-      "envify"
+      "reactify"
     ]
   },
   "jest": {
