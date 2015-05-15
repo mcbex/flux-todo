@@ -7,15 +7,22 @@
   "dependencies": {
     "flux": "^2.0.1",
     "keymirror": "~0.1.0",
+    "lodash": "^3.8.0",
     "object-assign": "^1.0.0",
     "react": "^0.12.0"
   },
   "devDependencies": {
+    "babelify": "^6.1.1",
     "browserify": "^6.2.0",
     "envify": "^3.0.0",
+    "gulp": "^3.8.11",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.4",
     "jest-cli": "^0.4.3",
     "reactify": "^0.15.2",
     "uglify-js": "~2.4.15",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "watchify": "^2.1.1"
   },
   "scripts": {
@@ -25,7 +32,11 @@
   },
   "author": "Bill Fisher",
   "browserify": {
-    "transform": ["reactify", "envify"]
+    "transform": [
+      "babelify",
+      "reactify",
+      "envify"
+    ]
   },
   "jest": {
     "rootDir": "./js"
