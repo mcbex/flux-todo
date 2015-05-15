@@ -1,4 +1,4 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher'),
+var appDispatcher = require('../dispatcher/AppDispatcher'),
     TodoConstants = require('../constants/TodoConstants'),
     TodoActions;
 
@@ -8,14 +8,14 @@ var AppDispatcher = require('../dispatcher/AppDispatcher'),
 TodoActions = {
 
     create: function(text) {
-        AppDispatcher.dispatch({
+        appDispatcher.dispatch({
             actionType: TodoConstants.TODO_CREATE,
             text: text
         });
     },
 
     updateText: function(id, text) {
-        AppDispatcher.dispatch({
+        appDispatcher.dispatch({
             actionType: TodoConstants.TODO_UPDATE_TEXT,
             id: id,
             text: text
@@ -28,27 +28,27 @@ TodoActions = {
                 TodoConstants.TODO_UNDO_COMPLETE :
                 TodoConstants.TODO_COMPLETE;
 
-        AppDispatcher.dispatch({
+        appDispatcher.dispatch({
             actionType: actionType,
             id: id
         });
     },
 
     toggleCompleteAll: function() {
-        AppDispatcher.dispatch({
+        appDispatcher.dispatch({
             actionType: TodoConstants.TODO_TOGGLE_COMPLETE_ALL
         });
     },
 
     destroy: function(id) {
-        AppDispatcher.dispatch({
+        appDispatcher.dispatch({
             actionType: TodoConstants.TODO_DESTROY,
             id: id
         });
     },
 
     destroyCompleted: function() {
-        AppDispatcher.dispatch({
+        appDispatcher.dispatch({
             actionType: TodoConstants.TODO_DESTROY_COMPLETED
         });
     }
