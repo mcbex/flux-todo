@@ -1,9 +1,9 @@
 {
-  "name": "todomvc-flux",
-  "version": "0.0.3",
-  "description": "Example Flux architecture.",
-  "repository": "https://github.com/facebook/flux",
-  "main": "js/app.js",
+  "name": "Flux/React experiements",
+  "version": "0.0.1",
+  "description": "Trying out some different things starting from the flux todo.mvc example",
+  "repository": "https://github.com/mcbex/flux-todo",
+  "main": "src/js/app.js",
   "dependencies": {
     "flux": "^2.0.1",
     "keymirror": "~0.1.0",
@@ -17,7 +17,6 @@
     "gulp": "^3.8.11",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.4",
-    "jest-cli": "^0.4.3",
     "reactify": "^0.15.2",
     "uglify-js": "~2.4.15",
     "vinyl-buffer": "^1.0.0",
@@ -25,17 +24,12 @@
     "watchify": "^2.1.1"
   },
   "scripts": {
-    "start": "gulp",
-    "test": "jest"
+    "start": "gulp"
   },
-  "author": "Bill Fisher",
   "browserify": {
     "transform": [
       "babelify",
       "reactify"
     ]
-  },
-  "jest": {
-    "rootDir": "./js"
   }
 }
