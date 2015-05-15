@@ -1,16 +1,14 @@
-finish example
-make github repo
 make list of likes/dislikes
-gulp?
 make into yeoman generator
 start iterating on design in branches
-better dispatcher?
 
 Likes:
-    static type checking for props
+    static type checking for view props
     "transpile time" error handling
     html/template mistakes throw meaningful errors instead of fail silently
 
 Dislikes:
     hard to debug!
     fails silently or with wierd errors
+    "sock drawer" type file structure
+    components rely on inheritance but there's no indication in the architecture
