@@ -122,7 +122,6 @@ class Dispatcher {
    * @return {string}
    */
   register(callback) {
-    debugger;
     var id = _prefix + this._lastID++;
     this._callbacks[id] = callback;
     return id;
