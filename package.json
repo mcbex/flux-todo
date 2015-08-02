@@ -1,5 +1,5 @@
 {
-  "name": "Flux/React experiements",
+  "name": "shittyToDoList",
   "version": "0.0.1",
   "description": "Trying out some different things starting from the flux todo.mvc example",
   "repository": "https://github.com/mcbex/flux-todo",
@@ -12,6 +12,7 @@
     "react": "^0.12.0"
   },
   "devDependencies": {
+    "babel": "^5.8.20",
     "babelify": "^6.1.1",
     "browserify": "^6.2.0",
     "gulp": "^3.8.11",
