@@ -2,35 +2,32 @@
 
 'use strict';
 
-var watchify = require('watchify');
-var browserify = require('browserify');
-var gulp = require('gulp');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
-var sourcemaps = require('gulp-sourcemaps');
-var assign = require('object-assign');
-var babelify = require('babelify');
-var reactify = require('reactify');
+import watchify from 'watchify';
+import browserify from 'browserify';
+import gulp from 'gulp';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import gutil from 'gulp-util';
+import sourcemaps from 'gulp-sourcemaps';
+import assign from 'object-assign';
+import babelify from 'babelify';
+import reactify from 'reactify';
 
 // add custom browserify options here
-var customOpts = {
+const customOpts = {
   entries: ['./src/js/app.js'],
   debug: true
 };
 
-var opts = assign({}, watchify.args, customOpts);
-var b = watchify(browserify(opts)); 
+const opts = assign({}, watchify.args, customOpts);
+const b = watchify(browserify(opts)); 
 
 // add transformations here
 // i.e. b.transform(coffeeify);
 b.transform(babelify);
 b.transform(reactify);
 
-b.on('update', bundle); // on any dep update, runs the bundler
-b.on('log', gutil.log); // output build logs to terminal
-
-function bundle() {
+const bundle = () => {
   return b.bundle()
     // log errors if they happen
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
@@ -38,10 +35,13 @@ function bundle() {
     // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
     // optional, remove if you dont want sourcemaps
-    .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
+    .pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
        // Add transformation tasks to the pipeline here.
     .pipe(sourcemaps.write('./')) // writes .map file
     .pipe(gulp.dest('./dist/js'));
 }
+
+b.on('update', bundle); // on any dep update, runs the bundler
+b.on('log', gutil.log); // output build logs to terminal
 
 gulp.task('default', bundle);
