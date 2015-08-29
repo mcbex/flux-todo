@@ -19,11 +19,13 @@
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.4",
+    "gulp-sass": "^2.0.4",
     "reactify": "^0.15.2",
     "uglify-js": "~2.4.15",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^2.1.1"
+    "watchify": "^2.1.1",
+    "browser-sync": "^2.8.2"
   },
   "scripts": {
     "start": "gulp"
