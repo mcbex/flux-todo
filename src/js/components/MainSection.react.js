@@ -1,6 +1,6 @@
 var React = require('react'),
     ReactPropTypes = React.PropTypes,
-    TodoActions = require('../actions/TodoActions'),
+    Actions = require('../actions/Actions'),
     Input = require('./Input.react'),
     MainSection;
 
@@ -22,7 +22,7 @@ MainSection = React.createClass({
     },
 
     _onSave: function(text) {
-        TodoActions.updateText(text);
+        Actions.updateText(text);
     }
 
 });

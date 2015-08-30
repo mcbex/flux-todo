@@ -1,5 +1,5 @@
 var React = require('react'),
-    TodoActions = require('../actions/TodoActions'),
+    Actions = require('../actions/Actions'),
     Header;
 
 Header = React.createClass({
