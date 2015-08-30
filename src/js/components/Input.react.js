@@ -1,9 +1,9 @@
 var React = require('react'),
     ReactPropTypes = React.PropTypes,
     ENTER_KEY_CODE = 13,
-    TodoTextInput;
+    Input;
 
-TodoTextInput = React.createClass({
+Input = React.createClass({
 
     propTypes: {
         className: ReactPropTypes.string,
@@ -55,4 +55,4 @@ TodoTextInput = React.createClass({
 
 });
 
-module.exports = TodoTextInput;
+module.exports = Input;

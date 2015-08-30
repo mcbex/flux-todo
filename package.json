@@ -1,7 +1,7 @@
 {
-  "name": "shittyToDoList",
+  "name": "shittyHelloWorldApp",
   "version": "0.0.1",
-  "description": "Trying out some different things starting from the flux todo.mvc example",
+  "description": "Basic flux + react + web components",
   "repository": "https://github.com/mcbex/flux-todo",
   "main": "src/js/app.js",
   "dependencies": {

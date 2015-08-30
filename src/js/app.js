@@ -1,7 +1,7 @@
 var React = require('react'),
-    TodoApp = require('./components/TodoApp.react');
+    App = require('./components/App.react');
 
 React.render(
-    <TodoApp />,
-    document.getElementById('todoapp')
+    <App />,
+    document.getElementById('main')
 );

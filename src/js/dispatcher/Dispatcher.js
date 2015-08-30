@@ -13,8 +13,6 @@
 
 "use strict";
 
-var invariant = require('../common/not-invariant');
-
 var _prefix = 'ID_';
 
 /**
@@ -133,11 +131,6 @@ class Dispatcher {
    * @param {string} id
    */
   unregister(id) {
-    invariant(
-      this._callbacks[id],
-      'Dispatcher.unregister(...): `%s` does not map to a registered callback.',
-      id
-    );
     delete this._callbacks[id];
   }
 
@@ -149,26 +142,11 @@ class Dispatcher {
    * @param {array<string>} ids
    */
   waitFor(ids) {
-    invariant(
-      this._isDispatching,
-      'Dispatcher.waitFor(...): Must be invoked while dispatching.'
-    );
     for (var ii = 0; ii < ids.length; ii++) {
       var id = ids[ii];
       if (this._isPending[id]) {
-        invariant(
-          this._isHandled[id],
-          'Dispatcher.waitFor(...): Circular dependency detected while ' +
-          'waiting for `%s`.',
-          id
-        );
         continue;
       }
-      invariant(
-        this._callbacks[id],
-        'Dispatcher.waitFor(...): `%s` does not map to a registered callback.',
-        id
-      );
       this._invokeCallback(id);
     }
   }
@@ -179,10 +157,6 @@ class Dispatcher {
    * @param {object} payload
    */
   dispatch(payload) {
-    invariant(
-      !this._isDispatching,
-      'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.'
-    );
     this._startDispatching(payload);
     try {
       for (var id in this._callbacks) {
